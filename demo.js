@@ -6,7 +6,7 @@ function header(rows) {
     headers.push(["<th>", i, "</th>"].join(''));
   }
   headers.push("</tr></thead>");
-  return headers.join('');  
+  return headers.join('');
 }
 
 function body(rows) {
@@ -15,7 +15,7 @@ function body(rows) {
     var item = rows.item(i);
     b.push("<tr>");
     for (key in item) {
-      b.push("<td>", item[key], "</td>");      
+      b.push("<td>", item[key], "</td>");
     }
     b.push("</tr>");
   }
@@ -30,7 +30,7 @@ function s(query, params) {
       var rows = results.rows;
       if (rows.length > 0) {
         t.html(header(rows));
-        t.append(body(rows));     
+        t.append(body(rows));
       } else {
         t.html("<thead><tr><td>No data to display</td></tr></thead>");
       }
@@ -39,7 +39,7 @@ function s(query, params) {
     function(tx, e) {
       console.error(["Query Error ", "[", e.code , "]:  ", e.message].join(''));
     });
-  }, 
+  },
   function(e) {
     console.error(["Transaction Error ", "[", e.code , "]:  ", e.message].join(''));
   },
