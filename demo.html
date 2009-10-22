@@ -11,27 +11,55 @@
         float: left;
         width: 700px;
         border: 2px solid black;
+        margin: 20px 10px 0 20px;
+      }
+      #results .placeholder {
+        display: none;
       }
       #results tbody td {
         border: 1px solid gray;
         text-align: right;
       }
-      #cheatsheet {
+      #sidebar {
         float: right;
+        font-family: monospace;
+      }
+      #sidebar {
         width: 500px;
+      }
+      #sidebar h2 {
+        margin: 10px 0 2px 0;
+      }
+      #cheatsheet {
         background: #eef;
         border: 1px solid #003;
-        font-family: monospace;
       }
       #cheatsheet p {
         margin: 10px;
       }
+      #scratchpad {
+        width: 500px;
+        height: 200px;
+        font-family: monospace;
+      }
+      #sidebar button {
+        float: right;
+      }
     </style>
   </head>
   <body>
-    <table id="results"><thead><tr><td>Awaiting results...</td></tr></thead></table>
-    <div id="cheatsheet">
-      <p>create table t1 (t1key integer primary key,data text,num double, timeenter date)</p>
+    <table id="results">
+      <thead><tr><td>Awaiting results...</td></tr></thead>
+      <tbody><tr class="placeholder"><td></td></tr></tbody>
+    </table>
+    <div id="sidebar">
+      <h2>Cheat sheet</h2>
+      <div id="cheatsheet">
+        <p>create table t1 (t1key integer primary key,data text,num double, timeenter date)</p>
+        <p>insert into t4 (data, num) values("more stuff", 3)</p>
+      </div>
+      <h2>Scratch pad</h2>
+      <textarea id="scratchpad" name="scratchpad" rows="0" cols="0"></textarea>
     </div>
   </body>
 </html>
