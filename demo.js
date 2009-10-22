@@ -47,3 +47,26 @@ function s(query, params) {
     console.info("Transaction complete");
   });
 }
+
+$(function() {
+  $('#run').click(function() {
+    s(this.form['scratchpad'].value);
+  });
+
+  function isMeta(code) {
+    return code == "91" || code == "93";
+  }
+
+  var meta = false;
+  $('#scratchpad').keyup(function(e) {
+    if (isMeta(e.keyCode)) {
+      meta = false;
+    }
+  }).keydown(function(e) {
+    if (isMeta(e.keyCode)) {
+      meta = true;
+    } else if (meta && e.keyCode == "13") {
+      $('#run').click();
+    }
+  });
+});
