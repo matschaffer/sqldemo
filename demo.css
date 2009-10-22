@@ -1,0 +1,38 @@
+#results {
+  float: left;
+  width: 700px;
+  border: 2px solid black;
+  margin: 20px 10px 0 20px;
+}
+#results .placeholder {
+  display: none;
+}
+#results tbody td {
+  border: 1px solid gray;
+  text-align: right;
+}
+#sidebar {
+  float: right;
+  font-family: monospace;
+}
+#sidebar {
+  width: 500px;
+}
+#sidebar h2 {
+  margin: 10px 0 2px 0;
+}
+#cheatsheet {
+  background: #eef;
+  border: 1px solid #003;
+}
+#cheatsheet p {
+  margin: 10px;
+}
+#scratchpad {
+  width: 500px;
+  height: 200px;
+  font-family: monospace;
+}
+#sidebar button {
+  float: right;
+}
