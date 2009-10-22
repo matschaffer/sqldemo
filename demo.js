@@ -63,7 +63,9 @@ $(function() {
 
   var runButton = $('#run');
   runButton.click(function() {
-    s(this.form['scratchpad'].value);
+    var query = this.form['scratchpad'].value;
+    console.log("> " + query);
+    s(query);
   });
 
   $('#scratchpad').keypress(function(e) {
