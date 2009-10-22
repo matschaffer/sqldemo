@@ -26,11 +26,13 @@ function body(rows) {
 function s(query, params) {
   db.transaction(function(tx) {
     tx.executeSql(query, params, function(tx, results) {
+      var t = $('#results');
       var rows = results.rows;
       if (rows.length > 0) {
-        var t = $('#results');
         t.html(header(rows));
         t.append(body(rows));     
+      } else {
+        t.html("<thead><tr><td>No data to display</td></tr></thead>");
       }
       console.log(results.rowsAffected + " rows affected.");
     },
