@@ -1,5 +1,18 @@
 var db = openDatabase("sqlDemo", "1.0", "A database for doing sql demos.");
 
+var DisplayedConsole = function(container, console) {
+  this.error = function(m) {
+    container.append(["<p class='error'>", m, "</p>"].join(''));
+    console.error(m);
+    container.scrollTo('max');
+  };
+  this.log = function(m) {
+    container.append(["<p>", m, "</p>"].join(''));
+    console.log(m);
+    container.scrollTo('max');
+  };
+};
+
 function header(rows) {
   var headers = ["<thead><tr>"];
   for (i in rows.item(0)) {
@@ -46,6 +59,8 @@ function s(query, params) {
 }
 
 $(function() {
+  console = new DisplayedConsole($('#log'), console);
+
   var runButton = $('#run');
   runButton.click(function() {
     s(this.form['scratchpad'].value);
