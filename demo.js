@@ -42,31 +42,19 @@ function s(query, params) {
   },
   function(e) {
     console.error(["Transaction Error ", "[", e.code , "]:  ", e.message].join(''));
-  },
-  function() {
-    console.info("Transaction complete");
   });
 }
 
 $(function() {
-  $('#run').click(function() {
+  var runButton = $('#run');
+  runButton.click(function() {
     s(this.form['scratchpad'].value);
   });
 
-  function isMeta(code) {
-    return code == "91" || code == "93";
-  }
-
-  var meta = false;
-  $('#scratchpad').keyup(function(e) {
-    if (isMeta(e.keyCode)) {
-      meta = false;
-    }
-  }).keydown(function(e) {
-    if (isMeta(e.keyCode)) {
-      meta = true;
-    } else if (meta && e.keyCode == "13") {
-      $('#run').click();
+  $('#scratchpad').keypress(function(e) {
+    if (e.keyCode == "13" && e.shiftKey) {
+      runButton.click();
+      return false;
     }
   });
 });
