@@ -23,8 +23,8 @@ h2 {
   text-align: right;
 }
 #log {
-  border: 1px solid #a00;
-  background: #fee;
+  border: 1px solid #840;
+  background: #FFDAB9;
   height: 100px;
   overflow: auto;
   width: 100%;
@@ -43,8 +43,8 @@ h2 {
   width: 40%;
 }
 #cheatsheet {
-  background: #eef;
-  border: 1px solid #00a;
+  background: #ffc;
+  border: 1px solid #fd5;
 }
 #cheatsheet p {
   margin: 10px;
