@@ -1,0 +1,34 @@
+TrickOrTreaters
+ - id
+ - name (f/l)
+ - costume_id (int)
+
+CandyBag
+ - house_id (houses.id)
+ - received_at (timestamp)
+ - trickortreater_id (trickortreaters.id)
+ - candy_id (candy.id)
+
+Candy
+ - id
+ - weight
+ - name
+ - rating (real)
+ 
+Costumes
+ - id
+ - name
+ - rating (real)
+
+Ammunition
+ - shaving cream
+
+Houses
+  - rating (string) - ("AWESOME", "GOOD", "SUCKY")
+  - latitude
+  - longitude
+
+
+Decorations
+
+ - 
