@@ -60,7 +60,7 @@ File.open('data.js', 'w') do |data|
   proc {
     people = []
     Dir['people_pages/*'].each do |file|
-      people += Nokogiri(File.read(file)).search('.jiveTT-hover-user').map{|e| e.text.strip }.select{|name| !name.empty?}
+      people += Nokogiri(File.read(file)).search('.fullname').map{|e| e.text.strip }.select{|name| !name.empty?}
     end
     
     puts "Processed #{people.length} people"
